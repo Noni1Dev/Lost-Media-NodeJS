@@ -398,7 +398,7 @@ client.on('interactionCreate', async (interaction) => {
                 return;
             }
 
-            await interaction.reply({ content: '🔄 Converting image to GIF... Please wait Nik mok!', ephemeral: true });
+            await interaction.reply({ content: '🔄 Converting image to GIF... Please wait!', ephemeral: true });
 
             try {
                 // Download the original image
