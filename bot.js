@@ -62,7 +62,7 @@ const randomPhrases = [
     "الترمة الإتصال", "يتصل", "سوة مشوطة", "القلوة المقلية", "ريال مدريد الزب",
     "GameBananaNmi.org", "القحبنة", "الشبكة", "الويندوز", "ترمة",
     "الفترة الصباحية", "الكرعنة", "ابو ترمة الإتصال", "أكل الدلاع XD",
-    "النمي 😱", "حكان الترمة", "زب الشعر", "الذهاب للنيك في الجبل ثم"
+    "النمي 😱", "حكان الترمة", "زب الشعر", "الذهاب للنيك في الجبل ثم", "فرماجة", "يحرق طبابن طبون مك"
 ];
 
 // Slash commands
@@ -244,7 +244,7 @@ client.on('interactionCreate', async (interaction) => {
         }
 
         else if (commandName === 'spam') {
-            const count = Math.min(interaction.options.getInteger('count'), 20);
+            const count = Math.min(interaction.options.getInteger('count'), 5);
             
             await interaction.reply({ content: `Spamming ${count} messages!`, ephemeral: true });
             
@@ -253,7 +253,7 @@ client.on('interactionCreate', async (interaction) => {
             // Pre-generate all messages for maximum speed
             const messages = [];
             for (let i = 0; i < count; i++) {
-                const numPhrases = Math.floor(Math.random() * 3) + 1;
+                const numPhrases = Math.floor(Math.random() * 6) + 2;
                 const selectedPhrases = [];
                 
                 // Optimized random selection without shuffling entire array
@@ -298,7 +298,7 @@ client.on('interactionCreate', async (interaction) => {
                 
                 // Wait between batches to respect rate limits (except for last batch)
                 if (batchIndex < batches.length - 1) {
-                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    await new Promise(resolve => setTimeout(resolve, 400));
                 }
             }
         }
