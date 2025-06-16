@@ -16,4 +16,4 @@ COPY . .
 RUN npm ci
 
 # Start your bot
-CMD ["node", "index.js"]
+CMD ["node", "bot.js"]
