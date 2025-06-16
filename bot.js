@@ -1,6 +1,8 @@
+require('dotenv').config();
 const { Client, GatewayIntentBits, SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+
 
 
 const bannedUsers = [ // Replace with actual banned user IDs
@@ -582,4 +584,4 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 // Login with your bot token
-client.login('');
+client.login(process.env.DISCORD_TOKEN);
