@@ -6,7 +6,8 @@ const path = require('path');
 
 
 const bannedUsers = [ // Replace with actual banned user IDs
-    '1162471295078903908'
+    '1162471295078903908',
+    '1278441086410293354'
 ];
 
 // Create client with all intents
